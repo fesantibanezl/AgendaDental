@@ -30,12 +30,14 @@ http://127.0.0.1:8201/.
 Las cinco páginas usan NgModules y se cargan mediante `loadChildren`. El
 enrutador redirige la raíz a Login y mantiene `PreloadAllModules`.
 
-Para probar el acceso, crea una cuenta con datos ficticios, por ejemplo usuario
-`Dental07` y contraseña `Turno2026!`. Ingresa con esa misma cuenta después del
-registro. El usuario se guarda en el navegador; la contraseña se verifica mediante
-PBKDF2 y no se guarda en texto plano. La sesión de demostración se conserva al
-recargar la pestaña y se borra al pulsar **Cerrar sesión**. El prototipo no usa SQL
-ni autentica pacientes reales.
+Para probar el acceso, ingresa con el usuario `Dental07` y la contraseña
+`Turno2026!`. La app crea esa cuenta ficticia en el primer ingreso, sin pasar por
+**Crear cuenta**. Si ya registraste `Dental07` en ese navegador, ingresa con la
+contraseña que elegiste al registrarlo.
+
+El navegador guarda un verificador PBKDF2 para cada cuenta. La sesión se conserva
+al recargar la pestaña y se borra al pulsar **Cerrar sesión**. El prototipo no usa
+SQL ni autentica pacientes reales.
 
 ## Recorrido de prueba
 

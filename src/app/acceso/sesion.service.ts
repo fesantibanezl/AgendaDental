@@ -17,6 +17,13 @@ interface CuentaLocal {
 // Las cuentas se guardan en el navegador; la sesión solo recuerda el usuario de la pestaña.
 const CUENTAS = 'agendadental.cuentas.v1';
 const SESION = 'agendadental.sesion.v1';
+const PERFIL_DEMO: PerfilPaciente = {
+  usuario: 'dental07',
+  nombre: 'Paciente',
+  apellido: 'Demo',
+  correo: 'dental07@example.com',
+};
+const CLAVE_DEMO = 'Turno2026!';
 
 function leerCuentas(): CuentaLocal[] {
   try {
@@ -73,7 +80,15 @@ export class SesionService {
   // Busca la cuenta y activa la sesión solo si la contraseña coincide.
   async ingresar(usuario: string, clave: string): Promise<boolean> {
     if (!USERNAME_PATTERN.test(usuario) || !validPassword(clave)) return false;
-    const cuenta = leerCuentas().find(item => item.perfil.usuario === usuario.toLowerCase());
+    const usuarioNormalizado = usuario.toLowerCase();
+    let cuenta = leerCuentas().find(item => item.perfil.usuario === usuarioNormalizado);
+
+    // Crea la cuenta ficticia al primer acceso y conserva cualquier cuenta ya registrada.
+    if (!cuenta && usuarioNormalizado === PERFIL_DEMO.usuario && clave === CLAVE_DEMO) {
+      await this.registrar(PERFIL_DEMO, clave);
+      cuenta = leerCuentas().find(item => item.perfil.usuario === usuarioNormalizado);
+    }
+
     if (!cuenta || await verificarClave(clave, cuenta.sal) !== cuenta.verificador) return false;
 
     sessionStorage.setItem(SESION, cuenta.perfil.usuario);
