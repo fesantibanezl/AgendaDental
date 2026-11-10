@@ -1,0 +1,6 @@
+AgendaDental - Navegación comprobada en Chrome (vista móvil)
+OK: / redirige a Login.
+OK: Login → Registro → Login.
+OK: detalle abre y cierra como modal dentro de Mis citas.
+OK: Mis citas → Reservar cita y Perfil, con regreso.
+OK: ruta desconocida vuelve a Login; sin errores JavaScript.

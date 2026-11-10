@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda Dental</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/mis-citas" routerDirection="back">Mis citas</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="agenda-screen">
+    <h1>Perfil de usuario</h1>
+    @if (perfil(); as paciente) {
+      <p class="agenda-lead">Usuario: <strong>{{ paciente.usuario }}</strong></p>
+    }
+    <ion-card>
+      <ion-card-header><ion-card-title>Datos de contacto</ion-card-title></ion-card-header>
+      <ion-card-content>
+        <!-- ngModel actualiza el borrador; solo Guardar aplica los cambios a la cuenta. -->
+        <form #formulario="ngForm" class="agenda-form" autocomplete="off" (ngSubmit)="guardar(formulario)" novalidate>
+          <ion-input #campoNombre label="Nombre" labelPlacement="stacked" fill="outline"
+            name="nombre" [(ngModel)]="borrador.nombre" required></ion-input>
+          <ion-input #campoApellido label="Apellido" labelPlacement="stacked" fill="outline"
+            name="apellido" [(ngModel)]="borrador.apellido" required></ion-input>
+          <ion-input label="Correo electrónico" labelPlacement="stacked" fill="outline"
+            name="correo" type="email" [(ngModel)]="borrador.correo" email required></ion-input>
+
+          <!-- La interpolación muestra al instante el nombre que se está editando. -->
+          <p class="vista-previa">Vista previa del saludo: Hola, <strong>{{ borrador.nombre || 'paciente' }}</strong>.</p>
+          @if (mensaje() && !formulario.dirty) {
+            <p class="perfil-estado" role="status">{{ mensaje() }}</p>
+          }
+          @if (error()) {
+            <p class="agenda-form-error" role="alert">{{ error() }}</p>
+          }
+          <div class="acciones-perfil">
+            <ion-button type="button" fill="outline" expand="block"
+              (click)="restablecer(formulario)">Restablecer</ion-button>
+            <ion-button type="submit" expand="block">Guardar</ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </main>
+</ion-content>

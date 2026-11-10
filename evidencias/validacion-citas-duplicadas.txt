@@ -1,0 +1,5 @@
+AgendaDental - Regla de una cita activa por paciente, profesional y fecha
+OK: Login y animación de entrada en Mis citas.
+OK: formulario incompleto rechazado; calendario y 18 bloques; cita confirmada a las 09:00.
+OK: el segundo intento con la misma profesional y fecha bloquea todos los horarios y Reservar; otro profesional sigue disponible.
+OK: cancelación confirmada, estado visible y horario liberado.

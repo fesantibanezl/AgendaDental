@@ -1,0 +1,55 @@
+PS> npm.cmd run build -- --progress=false
+
+> agendadental@0.0.1 build
+> ng build --progress=false
+
+Initial chunk files | Names                  |  Raw size | Estimated transfer size
+chunk-WQOOQ5MY.js   | -                      | 369.53 kB |                85.08 kB
+chunk-D3J3DTY3.js   | -                      |  52.79 kB |                16.33 kB
+styles-D3D6HMB6.css | styles                 |  47.92 kB |                 6.04 kB
+chunk-ORQN4CF4.js   | -                      |  10.11 kB |                 2.63 kB
+chunk-OCOILEVH.js   | -                      |   9.98 kB |                 2.58 kB
+chunk-O6SRRXDX.js   | -                      |   8.72 kB |                 3.19 kB
+chunk-VCOCXPEV.js   | -                      |   7.74 kB |                 3.06 kB
+chunk-NBFUZJQG.js   | -                      |   5.50 kB |                 2.18 kB
+chunk-G7YHPQBY.js   | -                      |   3.87 kB |                 1.47 kB
+chunk-ZTKDJQFB.js   | -                      |   3.68 kB |                 1.49 kB
+chunk-LMLDHCQO.js   | -                      |   3.36 kB |                 1.25 kB
+chunk-7ABGSH3V.js   | -                      |   3.15 kB |                 1.42 kB
+chunk-QJ3WB6RF.js   | -                      |   2.92 kB |                 1.27 kB
+chunk-ODJZW6XZ.js   | -                      |   2.50 kB |               721 bytes
+chunk-DYMPB4LX.js   | -                      |   2.11 kB |                 1.01 kB
+main-ZXUVPH4D.js    | main                   |   2.04 kB |               714 bytes
+chunk-6LKOVOTC.js   | -                      |   1.32 kB |               580 bytes
+chunk-QUJFQN2Y.js   | -                      | 962 bytes |               962 bytes
+chunk-B5SICYPE.js   | -                      | 887 bytes |               887 bytes
+chunk-N4AZZYK5.js   | -                      | 845 bytes |               845 bytes
+chunk-NWJ5J3BN.js   | -                      | 716 bytes |               716 bytes
+chunk-YO6GHHCY.js   | -                      | 527 bytes |               527 bytes
+chunk-IUPNGVUQ.js   | -                      | 229 bytes |               229 bytes
+chunk-TGPNIOAN.js   | -                      | 191 bytes |               191 bytes
+
+                    | Initial total          | 541.59 kB |               135.35 kB
+
+Lazy chunk files    | Names                  |  Raw size | Estimated transfer size
+chunk-F6QKDHLI.js   | ion-datetime-entry     |  58.02 kB |                11.65 kB
+chunk-ZPHMIJL5.js   | ion-item_8-entry       |  56.96 kB |                 7.63 kB
+chunk-OBQIEAAW.js   | ion-select_3-entry     |  54.93 kB |                 9.28 kB
+chunk-FPETJOIW.js   | ion-textarea-entry     |  47.04 kB |                 5.84 kB
+chunk-6POWO2RG.js   | ion-alert-entry        |  44.62 kB |                 7.15 kB
+chunk-I57S27K5.js   | ion-modal-entry        |  43.51 kB |                10.31 kB
+chunk-6D7EIAQV.js   | ion-app_8-entry        |  43.22 kB |                 9.64 kB
+chunk-5RCYE62D.js   | ion-input-entry        |  43.15 kB |                 6.09 kB
+chunk-M4X3BTW4.js   | ion-action-sheet-entry |  31.71 kB |                 5.38 kB
+chunk-ZRX4ATUU.js   | ion-range-entry        |  30.84 kB |                 6.02 kB
+chunk-JU47USFF.js   | ion-segment_2-entry    |  29.22 kB |                 5.47 kB
+chunk-PT2QPL5R.js   | ion-button_2-entry     |  28.14 kB |                 5.59 kB
+chunk-MSXNUDHT.js   | ion-popover-entry      |  25.77 kB |                 6.41 kB
+chunk-JQSBPM2D.js   | ion-refresher_2-entry  |  25.36 kB |                 5.29 kB
+chunk-XUI45STF.js   | ion-toggle-entry       |  25.07 kB |                 4.11 kB
+...and 75 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [49.874 seconds] - 2026-11-09T17:55:19.773Z
+
+Output location: C:\Users\slfel\Documents\ChatGPT\desarrollo de aplicaciones\AgendaDental\www
+

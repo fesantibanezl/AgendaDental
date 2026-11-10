@@ -1,0 +1,17 @@
+.nombres { display: grid; gap: .875rem; }
+
+.reglas {
+  padding: .875rem;
+  border-radius: .625rem;
+  background: var(--agenda-background);
+}
+
+.reglas h2 { margin: 0 0 .5rem; font-size: .95rem; font-weight: 700; }
+.reglas ul { display: grid; gap: .375rem; margin: 0; padding: 0; list-style: none; }
+.reglas li { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: .5rem; }
+.reglas .estado { color: var(--agenda-muted); font-size: .78rem; }
+.reglas li.cumple .estado { color: #116350; font-weight: 700; }
+
+@media (min-width: 34rem) {
+  .nombres { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

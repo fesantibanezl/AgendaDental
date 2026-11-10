@@ -1,0 +1,7 @@
+AgendaDental - Reserva, cancelación y perfil en Chrome (vista móvil)
+OK: Login y animación de entrada en Mis citas.
+OK: formulario incompleto rechazado; calendario y 18 bloques; cita confirmada a las 09:00.
+OK: detalle y persistencia al recargar; bloqueo de hora solo para el profesional ocupado.
+OK: cancelación confirmada, estado visible y horario liberado.
+OK: edición con ngModel, correo inválido rechazado, restablecimiento animado y perfil persistente.
+OK: otra cuenta no ve las citas de Ana. Sin errores JavaScript.

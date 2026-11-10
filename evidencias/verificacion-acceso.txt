@@ -1,0 +1,56 @@
+PS> npm.cmd run lint
+
+> agendadental@0.0.1 lint
+> ng lint
+
+
+Linting "app"...
+
+All files pass linting.
+
+PS> npm.cmd test -- --watch=false
+
+> agendadental@0.0.1 test
+> ng test --watch=false
+
+> Building...
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+styles.css                                   | styles                                    |  58.58 kB | 
+chunk-RB3YCTPV.js                            | -                                         |  19.21 kB | 
+chunk-CQSSYWCX.js                            | -                                         |  12.32 kB | 
+chunk-6HL2CBOX.js                            | -                                         |   9.81 kB | 
+chunk-E6V24KQT.js                            | -                                         |   7.04 kB | 
+chunk-VPG7EMQL.js                            | -                                         |   5.66 kB | 
+spec-app-app.component.js                    | spec-app-app.component                    |   5.41 kB | 
+chunk-RSTWSNOR.js                            | -                                         |   4.75 kB | 
+chunk-D5QDTABF.js                            | -                                         |   4.13 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+spec-app-reservar-cita-reservar-cita.page.js | spec-app-reservar-cita-reservar-cita.page | 725 bytes | 
+spec-app-mis-citas-mis-citas.page.js         | spec-app-mis-citas-mis-citas.page         | 719 bytes | 
+spec-app-registro-registro.page.js           | spec-app-registro-registro.page           | 715 bytes | 
+spec-app-perfil-perfil.page.js               | spec-app-perfil-perfil.page               | 697 bytes | 
+spec-app-login-login.page.js                 | spec-app-login-login.page                 | 688 bytes | 
+setup-test-setup.js                          | setup-test-setup                          | 365 bytes | 
+
+                                             | Initial total                             | 133.02 kB
+
+Lazy chunk files                             | Names                                     |  Raw size
+mis-citas.module-MPZIZ4XC.js                 | mis-citas-module                          | 207 bytes | 
+registro.module-3MCB5T2R.js                  | registro-module                           | 206 bytes | 
+perfil.module-XNLYJ3JZ.js                    | perfil-module                             | 200 bytes | 
+login.module-SV7MA67E.js                     | login-module                              | 197 bytes | 
+reservar-cita.module-4NLYZOAB.js             | reservar-cita-module                      | 189 bytes | 
+
+Application bundle generation complete. [14.263 seconds] - 2026-11-09T18:04:38.162Z
+
+
+ RUN  v4.1.12 C:/Users/slfel/Documents/ChatGPT/desarrollo de aplicaciones/AgendaDental
+
+
+ Test Files  6 passed (6)
+      Tests  6 passed (6)
+   Start at  15:04:41
+   Duration  22.17s (transform 19.37s, setup 23.44s, import 38.51s, tests 2.05s, environment 56.20s)
+

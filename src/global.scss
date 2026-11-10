@@ -1,0 +1,70 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+ion-content {
+  --background: var(--agenda-background);
+}
+
+.agenda-screen {
+  box-sizing: border-box;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.agenda-entry {
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  max-width: 30rem;
+  padding-top: max(1rem, var(--ion-safe-area-top, 0px));
+}
+
+.agenda-screen h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.65rem, 6vw, 2.1rem);
+  font-weight: 750;
+  letter-spacing: -.035em;
+}
+
+.agenda-screen ion-card {
+  margin: 1rem 0;
+  border-radius: 1rem;
+}
+
+.agenda-lead {
+  color: var(--agenda-muted);
+  line-height: 1.45;
+}
+
+.agenda-form { display: grid; gap: .875rem; }
+
+.agenda-form-error {
+  margin: 0;
+  color: #a62235;
+  font-weight: 600;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "AgendaDental",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

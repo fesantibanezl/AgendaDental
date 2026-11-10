@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda Dental</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/mis-citas" routerDirection="back">Mis citas</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="agenda-screen">
+    <h1>Reservar cita</h1>
+    <p class="agenda-lead">La clínica atiende de 09:00 a 18:00. Cada cita dura 30 minutos.</p>
+    <ion-card>
+      <ion-card-header><ion-card-title>Datos de la cita</ion-card-title></ion-card-header>
+      <ion-card-content>
+        <form class="agenda-form" (ngSubmit)="reservar()" novalidate>
+          <ion-select
+            name="prestacion" label="Prestación" labelPlacement="stacked"
+            fill="outline" interface="popover" placeholder="Elige una prestación"
+            [ngModel]="prestacion" (ngModelChange)="elegirPrestacion($event)">
+            @for (opcion of prestaciones; track opcion.id) {
+              <ion-select-option [value]="opcion.id">{{ opcion.nombre }}</ion-select-option>
+            }
+          </ion-select>
+
+          <ion-select
+            name="profesional" label="Profesional" labelPlacement="stacked"
+            fill="outline" interface="popover" placeholder="Elige un profesional"
+            [disabled]="!prestacion" [ngModel]="profesional" (ngModelChange)="elegirProfesional($event)">
+            @for (persona of profesionales; track persona.id) {
+              <ion-select-option [value]="persona.id">{{ persona.nombre }}</ion-select-option>
+            }
+          </ion-select>
+
+          <!-- El calendario habilita desde hoy y se activa tras elegir un profesional. -->
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Fecha de la cita</mat-label>
+            <input matInput readonly name="fecha" [matDatepicker]="calendario" [min]="hoy"
+              [disabled]="!profesional" [ngModel]="fecha" (ngModelChange)="elegirFecha($event)">
+            <mat-datepicker-toggle matIconSuffix [for]="calendario"></mat-datepicker-toggle>
+            <mat-datepicker #calendario [startAt]="hoy" touchUi></mat-datepicker>
+          </mat-form-field>
+
+          <ion-select
+            name="hora" label="Hora" labelPlacement="stacked"
+            fill="outline" interface="popover" placeholder="Elige un horario"
+            [disabled]="!horarios.length" [(ngModel)]="hora">
+            @for (opcion of horarios; track opcion) {
+              <ion-select-option [value]="opcion">{{ opcion }}</ion-select-option>
+            }
+          </ion-select>
+          <!-- Explica por qué no se puede reservar cuando ya hay una cita con ese profesional. -->
+          @if (citaRepetida) {
+            <p class="agenda-form-error" role="status">
+              Ya tienes una cita con este profesional para esta fecha. Elige otro día o profesional,
+              o cancela la cita desde Mis citas.
+            </p>
+          } @else if (fecha && !horarios.length) {
+            <p class="agenda-lead">No hay horas disponibles ese día. Prueba con otra fecha.</p>
+          }
+          @if (error()) {
+            <p class="agenda-form-error" role="alert">{{ error() }}</p>
+          }
+          <ion-button type="submit" expand="block" [disabled]="guardando() || citaRepetida">Reservar</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </main>
+</ion-content>

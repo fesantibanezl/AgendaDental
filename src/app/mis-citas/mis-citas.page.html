@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda Dental</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarSesion()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="agenda-screen">
+    <!-- La interpolación muestra el nombre del paciente en el bloque animado. -->
+    <section #saludo class="saludo">
+      <h1>Mis citas</h1>
+      @if (perfil(); as paciente) {
+        <p>Hola, <strong>{{ paciente.nombre }}</strong>.</p>
+      }
+      <p class="agenda-lead">Consulta tus citas o reserva un horario en la clínica.</p>
+    </section>
+    <div class="acciones">
+      <ion-button expand="block" routerLink="/reservar-cita">Reservar cita</ion-button>
+      <ion-button expand="block" fill="outline" routerLink="/perfil">Mi perfil</ion-button>
+    </div>
+
+    <!-- Recorre las citas guardadas y usa una etiqueta para indicar el estado. -->
+    @if (citas().length) {
+      <ion-list class="lista-citas" aria-label="Mis citas">
+        @for (cita of citas(); track cita.id) {
+          <ion-item button [detail]="true" (click)="abrirDetalle(cita.id)">
+            <ion-label>
+              <h2>{{ cita.prestacion }}</h2>
+              <p>{{ cita.fecha | date:'mediumDate' }} · {{ cita.hora }}</p>
+              <p>{{ cita.profesional }}</p>
+            </ion-label>
+            <ion-badge slot="end" [color]="cita.estado === 'Confirmada' ? 'success' : 'medium'">
+              {{ cita.estado }}
+            </ion-badge>
+          </ion-item>
+        }
+      </ion-list>
+    } @else {
+      <ion-card>
+        <ion-card-header><ion-card-title>Aún no tienes citas</ion-card-title></ion-card-header>
+        <ion-card-content>Usa Reservar cita para elegir un horario.</ion-card-content>
+      </ion-card>
+    }
+
+    <!-- El detalle se abre dentro de Mis citas y permite confirmar una cancelación. -->
+    <ion-modal [isOpen]="!!detalle()" (didDismiss)="cerrarDetalle()">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Detalle de cita</ion-title>
+            <ion-buttons slot="end"><ion-button (click)="cerrarDetalle()">Cerrar</ion-button></ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <main class="agenda-screen">
+            @if (detalle(); as cita) {
+              <h2>{{ cita.prestacion }}</h2>
+              <dl class="datos-cita">
+                <dt>Profesional</dt><dd>{{ cita.profesional }}</dd>
+                <dt>Fecha</dt><dd>{{ cita.fecha | date:'longDate' }}</dd>
+                <dt>Hora</dt><dd>{{ cita.hora }}</dd>
+                <dt>Estado</dt>
+                <dd><ion-badge [color]="cita.estado === 'Confirmada' ? 'success' : 'medium'">{{ cita.estado }}</ion-badge></dd>
+              </dl>
+              @if (error()) {
+                <p class="agenda-form-error" role="alert">{{ error() }}</p>
+              }
+              @if (cita.estado === 'Confirmada') {
+                @if (confirmarCancelacion()) {
+                  <p>¿Cancelar esta cita? El horario quedará disponible nuevamente.</p>
+                  <ion-button fill="outline" (click)="confirmarCancelacion.set(false)">Volver</ion-button>
+                  <ion-button color="danger" (click)="cancelarCita()">Sí, cancelar</ion-button>
+                } @else {
+                  <ion-button expand="block" fill="outline" color="danger"
+                    (click)="confirmarCancelacion.set(true)">Cancelar cita</ion-button>
+                }
+              }
+            }
+          </main>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </main>
+</ion-content>

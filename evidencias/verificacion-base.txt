@@ -1,0 +1,110 @@
+AgendaDental - Verificación de la base
+PS> node --version
+v24.13.1
+PS> npm.cmd --version
+11.8.0
+PS> ionic.cmd --version
+7.2.0
+PS> .\node_modules\.bin\ng.cmd version
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI       : 21.2.28
+Angular           : 21.2.25
+Node.js           : 24.13.1
+Package Manager   : npm 11.8.0
+Operating System  : win32 x64
+
+┌───────────────────────────────────┬───────────────────┬───────────────────┐
+│ Package                           │ Installed Version │ Requested Version │
+├───────────────────────────────────┼───────────────────┼───────────────────┤
+│ @angular-devkit/core              │ 21.2.28           │ ^21.2.0           │
+│ @angular-devkit/schematics        │ 21.2.28           │ ^21.2.0           │
+│ @angular/build                    │ 21.2.28           │ ^21.2.0           │
+│ @angular/cdk                      │ 21.2.14           │ 21.2.14           │
+│ @angular/cli                      │ 21.2.28           │ ^21.2.0           │
+│ @angular/common                   │ 21.2.25           │ ^21.2.0           │
+│ @angular/compiler                 │ 21.2.25           │ ^21.2.0           │
+│ @angular/compiler-cli             │ 21.2.25           │ ^21.2.0           │
+│ @angular/core                     │ 21.2.25           │ ^21.2.0           │
+│ @angular/forms                    │ 21.2.25           │ ^21.2.0           │
+│ @angular/language-service         │ 21.2.25           │ ^21.2.0           │
+│ @angular/material                 │ 21.2.14           │ 21.2.14           │
+│ @angular/platform-browser         │ 21.2.25           │ ^21.2.0           │
+│ @angular/platform-browser-dynamic │ 21.2.25           │ ^21.2.0           │
+│ @angular/router                   │ 21.2.25           │ ^21.2.0           │
+│ @schematics/angular               │ 21.2.28           │ ^21.2.0           │
+│ rxjs                              │ 7.8.2             │ ~7.8.0            │
+│ typescript                        │ 5.9.3             │ ~5.9.0            │
+│ vitest                            │ 4.1.12            │ ^4.0.18           │
+└───────────────────────────────────┴───────────────────┴───────────────────┘
+PS> npm.cmd ls --depth=0 @ionic/angular @angular/material @angular/cdk
+agendadental@0.0.1 C:\Users\slfel\Documents\ChatGPT\desarrollo de aplicaciones\AgendaDental
+├── @angular/cdk@21.2.14
+├── @angular/material@21.2.14
+└── @ionic/angular@9.0.9
+
+PS> npm.cmd run lint
+
+> agendadental@0.0.1 lint
+> ng lint
+
+
+Linting "app"...
+
+All files pass linting.
+
+PS> npm.cmd test -- --watch=false
+
+> agendadental@0.0.1 test
+> ng test --watch=false
+
+> Building...
+One or more browsers which are configured in the project's Browserslist configuration fall outside Angular's browser support for this version.
+Unsupported browsers:
+chrome 110, chrome 109, chrome 108, chrome 107, edge 110, edge 109, edge 108, edge 107, firefox 111, firefox 110, firefox 109, firefox 108, firefox 107, firefox 106, ios_saf 16.3, ios_saf 16.2, ios_saf 16.1, safari 16.3, safari 16.2, safari 16.1
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+styles.css                                   | styles                                    |  58.44 kB | 
+chunk-TMUC45DS.js                            | -                                         |   8.46 kB | 
+chunk-J5GDERKP.js                            | -                                         |   5.71 kB | 
+chunk-J72PNP2R.js                            | -                                         |   5.47 kB | 
+chunk-FP24CDF2.js                            | -                                         |   5.35 kB | 
+spec-app-app.component.js                    | spec-app-app.component                    |   4.96 kB | 
+chunk-SWMHZOBN.js                            | -                                         |   4.80 kB | 
+chunk-CGZBV6BD.js                            | -                                         |   4.07 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+spec-app-reservar-cita-reservar-cita.page.js | spec-app-reservar-cita-reservar-cita.page | 725 bytes | 
+spec-app-mis-citas-mis-citas.page.js         | spec-app-mis-citas-mis-citas.page         | 689 bytes | 
+spec-app-registro-registro.page.js           | spec-app-registro-registro.page           | 685 bytes | 
+spec-app-perfil-perfil.page.js               | spec-app-perfil-perfil.page               | 667 bytes | 
+spec-app-login-login.page.js                 | spec-app-login-login.page                 | 658 bytes | 
+setup-test-setup.js                          | setup-test-setup                          | 365 bytes | 
+
+                                             | Initial total                             | 103.25 kB
+
+Lazy chunk files                             | Names                                     |  Raw size
+reservar-cita.module-IQ3FDKXF.js             | reservar-cita-module                      | 189 bytes | 
+mis-citas.module-GD7VHH2D.js                 | mis-citas-module                          | 177 bytes | 
+registro.module-5RCYH7DY.js                  | registro-module                           | 176 bytes | 
+perfil.module-H2POICYH.js                    | perfil-module                             | 170 bytes | 
+login.module-7KB3BMCK.js                     | login-module                              | 167 bytes | 
+
+Application bundle generation complete. [7.245 seconds] - 2026-11-09T17:50:43.510Z
+
+
+ RUN  v4.1.12 C:/Users/slfel/Documents/ChatGPT/desarrollo de aplicaciones/AgendaDental
+
+
+ Test Files  6 passed (6)
+      Tests  6 passed (6)
+   Start at  14:50:45
+   Duration  16.27s (transform 17.03s, setup 18.61s, import 29.83s, tests 1.36s, environment 39.83s)
+

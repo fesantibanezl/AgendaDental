@@ -1,0 +1,51 @@
+AgendaDental - Generación de páginas con Ionic CLI
+PS> ionic.cmd generate page login --no-interactive
+> ng.cmd generate page login --project=app
+CREATE src/app/login/login-routing.module.ts (360 bytes)
+CREATE src/app/login/login.module.ts (490 bytes)
+CREATE src/app/login/login.page.html (313 bytes)
+CREATE src/app/login/login.page.spec.ts (456 bytes)
+CREATE src/app/login/login.page.ts (289 bytes)
+CREATE src/app/login/login.page.scss (0 bytes)
+UPDATE src/app/app-routing.module.ts (607 bytes)
+[OK] Generated page!
+PS> ionic.cmd generate page registro --no-interactive
+> ng.cmd generate page registro --project=app
+CREATE src/app/registro/registro-routing.module.ts (372 bytes)
+CREATE src/app/registro/registro.module.ts (511 bytes)
+CREATE src/app/registro/registro.page.html (319 bytes)
+CREATE src/app/registro/registro.page.spec.ts (474 bytes)
+CREATE src/app/registro/registro.page.ts (301 bytes)
+CREATE src/app/registro/registro.page.scss (0 bytes)
+UPDATE src/app/app-routing.module.ts (732 bytes)
+[OK] Generated page!
+PS> ionic.cmd generate page mis-citas --no-interactive
+> ng.cmd generate page mis-citas --project=app
+CREATE src/app/mis-citas/mis-citas-routing.module.ts (373 bytes)
+CREATE src/app/mis-citas/mis-citas.module.ts (513 bytes)
+CREATE src/app/mis-citas/mis-citas.page.html (321 bytes)
+CREATE src/app/mis-citas/mis-citas.page.spec.ts (475 bytes)
+CREATE src/app/mis-citas/mis-citas.page.ts (304 bytes)
+CREATE src/app/mis-citas/mis-citas.page.scss (0 bytes)
+UPDATE src/app/app-routing.module.ts (860 bytes)
+[OK] Generated page!
+PS> ionic.cmd generate page reservar-cita --no-interactive
+> ng.cmd generate page reservar-cita --project=app
+CREATE src/app/reservar-cita/reservar-cita-routing.module.ts (389 bytes)
+CREATE src/app/reservar-cita/reservar-cita.module.ts (541 bytes)
+CREATE src/app/reservar-cita/reservar-cita.page.html (329 bytes)
+CREATE src/app/reservar-cita/reservar-cita.page.spec.ts (499 bytes)
+CREATE src/app/reservar-cita/reservar-cita.page.ts (320 bytes)
+CREATE src/app/reservar-cita/reservar-cita.page.scss (0 bytes)
+UPDATE src/app/app-routing.module.ts (1004 bytes)
+[OK] Generated page!
+PS> ionic.cmd generate page perfil --no-interactive
+> ng.cmd generate page perfil --project=app
+CREATE src/app/perfil/perfil-routing.module.ts (364 bytes)
+CREATE src/app/perfil/perfil.module.ts (497 bytes)
+CREATE src/app/perfil/perfil.page.html (315 bytes)
+CREATE src/app/perfil/perfil.page.spec.ts (462 bytes)
+CREATE src/app/perfil/perfil.page.ts (293 bytes)
+CREATE src/app/perfil/perfil.page.scss (0 bytes)
+UPDATE src/app/app-routing.module.ts (1121 bytes)
+[OK] Generated page!

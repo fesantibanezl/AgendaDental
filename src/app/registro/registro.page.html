@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda Dental</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">Volver al acceso</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="agenda-screen">
+    <h1>Crear cuenta</h1>
+    <p class="agenda-lead">Completa tus datos para crear tu acceso a Agenda Dental.</p>
+    <ion-card>
+      <ion-card-content>
+        <form #formulario="ngForm" class="agenda-form" (ngSubmit)="registrar(formulario)" autocomplete="off" novalidate>
+          <div class="nombres">
+            <ion-input
+              label="Nombre" labelPlacement="stacked" fill="outline"
+              name="nombre" autocomplete="given-name" [(ngModel)]="nombre" required>
+            </ion-input>
+            <ion-input
+              label="Apellido" labelPlacement="stacked" fill="outline"
+              name="apellido" autocomplete="family-name" [(ngModel)]="apellido" required>
+            </ion-input>
+          </div>
+          <ion-input
+            label="Correo electrónico" labelPlacement="stacked" fill="outline"
+            name="correo" type="email" autocomplete="email" [(ngModel)]="correo" email required>
+          </ion-input>
+          <ion-input
+            label="Usuario" labelPlacement="stacked" fill="outline"
+            name="usuario" autocomplete="off" autocapitalize="off"
+            [spellcheck]="false" [helperText]="ayudaUsuario" [(ngModel)]="usuario" required>
+          </ion-input>
+          <ion-input
+            label="Contraseña" labelPlacement="stacked" fill="outline"
+            name="clave" type="password" autocomplete="off" [(ngModel)]="clave" required>
+          </ion-input>
+
+          <!-- El formulario muestra qué requisitos cumple la contraseña mientras se escribe. -->
+          <section class="reglas" aria-labelledby="reglas-titulo">
+            <h2 id="reglas-titulo">Requisitos de la contraseña</h2>
+            <ul>
+              @for (regla of reglasClave; track regla.label) {
+                <li [class.cumple]="regla.matches(clave)">
+                  <span aria-hidden="true">{{ regla.matches(clave) ? '✓' : '○' }}</span>
+                  <span>{{ regla.label }}</span>
+                  <span class="estado">{{ regla.matches(clave) ? 'Cumple' : 'Pendiente' }}</span>
+                </li>
+              }
+            </ul>
+          </section>
+
+          <ion-input
+            label="Confirmar contraseña" labelPlacement="stacked" fill="outline"
+            name="confirmacion" type="password" autocomplete="off"
+            [(ngModel)]="confirmacion" required>
+          </ion-input>
+          @if (error()) {
+            <p class="agenda-form-error" role="alert">{{ error() }}</p>
+          }
+          <ion-button expand="block" type="submit" [disabled]="enviando()">
+            {{ enviando() ? 'Creando cuenta…' : 'Crear cuenta' }}
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </main>
+</ion-content>

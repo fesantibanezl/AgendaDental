@@ -1,0 +1,6 @@
+AgendaDental - Acceso comprobado en Chrome (vista móvil)
+OK: Login tiene usuario, contraseña oculta y Crear cuenta; Mis citas exige sesión.
+OK: Registro muestra seis reglas en vivo y rechaza correo, usuario, clave y confirmación inválidos.
+OK: registro vuelve a Login con el usuario; contraseña no queda en texto plano.
+OK: clave incorrecta rechazada; acceso válido, perfil, recarga y cierre de sesión comprobados.
+OK: registro rechaza usuarios duplicados sin distinguir mayúsculas, sin errores JavaScript.

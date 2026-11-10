@@ -1,0 +1,7 @@
+.saludo { padding: 1rem; border-radius: .875rem; background: #fff; }
+.saludo p { margin: .375rem 0 0; }
+.acciones { display: grid; grid-template-columns: 1fr 1fr; gap: .625rem; margin: .875rem 0; }
+.acciones ion-button { margin: 0; }
+.lista-citas { border-radius: .875rem; overflow: hidden; }
+.datos-cita dt { font-weight: 650; }
+.datos-cita dd { margin: .25rem 0 .75rem; }
